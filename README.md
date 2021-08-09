@@ -7,6 +7,7 @@ Patched Netflix App for Android enabling Widevine L1 allowing not certified devi
 ## Prerequisites
 
 - apktool v2.4.1
+- zipalign
 
 ## Step by step guide:
 
