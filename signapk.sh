@@ -27,7 +27,7 @@ echo param3 $STOREPASS
 echo param4 $ALIAS
 
 # delete output
-rm $SIGNED_APK
+rm -f $SIGNED_APK
 
 # delete META-INF folder
 zip -d $APK META-INF/\*

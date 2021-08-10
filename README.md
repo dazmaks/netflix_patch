@@ -6,30 +6,24 @@ Patched Netflix App for Android enabling Widevine L1 allowing not certified devi
 
 ## Prerequisites
 
-- apktool v2.4.1
-- zipalign
+```bash
+sudo apt install apktool zip unzip zipalign patch
+```
 
 ## Step by step guide:
 
 - Clone this repo
 - Download [Netflix 4.16.3](https://www.apkmirror.com/apk/netflix-inc/netflix/netflix-4-16-3-build-15172-release/), rename to `netflix.apk`
-- Open `Terminal.app` and run the following
-
+- Open `Terminal`
+- Run 
 ```bash
-# decompile
-apktool d -r -f netflix.apk
-
-# apply the patch
-patch -p0 -i ./netflix.patch
-
-# recompile
-apktool b -f netflix
-
-# sign
-./signapk.sh netflix/dist/netflix.apk mimi.keystore password mimi
+chmod +x patch.sh adbinstall.sh signapk.sh
+./patch.sh
 ```
-
-- Install `signed_netflix.apk` and enjoy Netflix HD
+- Install `signed_netflix.apk` OR allow debugging on your phone, plug your phone in and run
+```bash
+./adbinstall.sh signed_netflix.apk
+```
 
 ## Notes:
 
